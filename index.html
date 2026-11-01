@@ -1,13 +1,25 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie Watchlist</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Todo App</title>
+<style>
+*{box-sizing:border-box}body{font-family:Arial;background:#f0f2ff;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0}
+.container{background:white;width:90%;max-width:700px;padding:20px;border-radius:12px;box-shadow:0 5px 20px #ddd}
+form{display:flex;gap:8px}input[type=text]{flex:1;min-width:0;padding:10px;border:1px solid #ddd;border-radius:6px}
+button{cursor:pointer;padding:8px 12px}form button{background:#3984f6;color:white;border:0;border-radius:6px}
+.filters{display:flex;justify-content:flex-end;gap:5px;margin:15px 0}.selected{background:#e8f1ff;color:#3984f6}
+ul{list-style:none;padding:0}li{display:flex;align-items:center;gap:10px;padding:12px 0;border-top:1px solid #eee}li span{flex:1;overflow-wrap:anywhere}
+.done span{text-decoration:line-through;color:#999}.delete-button{border:0;background:transparent}.footer{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:15px;font-size:13px}
+</style>
+</head>
+<body><div class="container">
+<h2>Todo App</h2>
+<form id="todo-form"><input type="text" id="todo-input" placeholder="What needs doing?"><button>Add</button></form>
+<p><small>Tip: double-click a todo to edit. Press Enter to save.</small></p>
+<div class="filters"><button type="button" data-filter="all" class="selected">All</button><button type="button" data-filter="active">Active</button><button type="button" data-filter="completed">Completed</button></div>
+<ul id="todo-list"></ul>
+<div class="footer"><span id="items-left">0 items left</span><div><button type="button" id="clear-completed">Clear completed</button><button type="button" id="clear-all">Clear all</button></div></div>
+</div>
+<script src="script.js"></script> 
+</body></html>
